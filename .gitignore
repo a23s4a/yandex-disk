@@ -2,3 +2,5 @@ __pycache__/
 main/__pycache__/
 report*.html
 *.tar.gz
+*.swp
+.ropeproject/
