@@ -2,7 +2,6 @@ import gnupg
 import os
 from urllib.parse import urlencode
 import requests
-# from requests_toolbelt import MultipartEncoder
 client_id = '103cdd041bfb4b7b9ae5db4189619d61'
 client_secret = '60177c86bdfc4ebfa4b005ce780a4586'
 base_auth_url = 'https://oauth.yandex.ru/'
