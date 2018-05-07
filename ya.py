@@ -17,6 +17,7 @@ ya_token = 'ya_token'
 disk_root = '/mnt/'
 
 
+# аналог unix-команды which
 def which(prg):
     from subprocess import check_output, CalledProcessError
     try:
