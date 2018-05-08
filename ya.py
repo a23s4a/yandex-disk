@@ -31,9 +31,12 @@ def which(prg):
 
 
 gpgbinary = which('gpg2')
-gpg = gnupg.GPG(gpgbinary=gpgbinary)
-gpg.encoding = 'utf-8'
-gpg_fp = gpg.list_keys(True)[0]['fingerprint']
+if gpgbinary:
+    gpg = gnupg.GPG(gpgbinary=gpgbinary)
+    gpg.encoding = 'utf-8'
+    gpg_fp = gpg.list_keys(True)[0]['fingerprint']
+else:
+    print('Невозможно сохранить токен в зашифрованном виде')
 
 
 class Yadi():
