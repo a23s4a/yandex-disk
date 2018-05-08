@@ -1,22 +1,27 @@
+# Хранить токен в зашифрованном виде используя технологию gnupg
 import gnupg
 import os
 from urllib.parse import urlencode
 import requests
+# Следующие данные можно получить через свою учетную запись яндекс
 client_id = '103cdd041bfb4b7b9ae5db4189619d61'
 client_secret = '60177c86bdfc4ebfa4b005ce780a4586'
 base_auth_url = 'https://oauth.yandex.ru/'
 
+# Некоторые опциональные настройки для нашего приложения
 device_id = 'yadi_sk'
 device_name = 'openbsd'
 force_confirm = 'yes'
 state = '1234567890'
 
+# Имя файла, в котором будем хранить токен (в зашифрованном виде)
 ya_token = 'ya_token'
 
 disk_root = '/mnt/'
 
 
-# аналог unix-команды which
+# аналог unix-команды which, с помощью которой мы узнаем путь к
+# исполняемому файлу gpg
 def which(prg):
     from subprocess import check_output, CalledProcessError
     try:
